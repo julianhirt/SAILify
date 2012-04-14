@@ -2,7 +2,7 @@
 (function(){
 
     console.log("sailifying...");
-    if(this.salify != undefined)
+    if(typeof YT !== "undefined")
     {
     	console.log("Well, it seems this video is already sailified.");
     	return;
@@ -26,17 +26,33 @@
     msg.style.width = '100%';
     msg.style.top = '0px';
     msg.style.position = 'fixed';
-    msg.style.backgroundColor = '#70CA82';
-    msg.style.color = "#333";
-    msg.style.border = "1px solid #eee";
-    msg.id = 'sailifyMsg';
+    msg.style.backgroundColor = '#444';
+    msg.style.color = "#fff";
+    msg.style.border = "1px solid #333";
+    msg.id = 'sailifyContainer';
     msg.style.zIndex = 1001;
     msg.style.fontFamily = "Lucida Grande,Verdana,sans-serif";
-    msg.style.lineHeight = "43px";
+    msg.style.lineHeight = "34px";
     msg.style.textAlign = "center";
     msg.style.boxShadow = "0 1px 0 #999";
     msg.style.borderBottom = "1px solid #205827";
     msg.style.display = "none";
+
+    var messages = document.createElement('div');
+    messages.id = 'sailifyMsg';
+    messages.style.display='inline-block';
+    messages.style.lineHeight = "26px";
+    messages.style.padding= "7px 0 0 0";
+    messages.style.color = "#fff";
+    messages.style.verticalAlign="text-bottom";
+    msg.appendChild(messages);
+
+    var twitter = document.createElement('div');
+    twitter.setAttribute('id','sailifyTwitter');
+    twitter.style.display='inline-block';
+    twitter.style.margin='0 0 0 20px';
+    msg.appendChild(twitter);
+
     d.body.appendChild(msg);
 
     var tag = document.createElement('script');
@@ -44,7 +60,8 @@
     d.body.appendChild(tag);
 
     $jq('#sailifyMsg').html("Your video is getting <b>SAIL</b>ified! Hold on a second...");
-    $jq('#sailifyMsg').slideDown(200);
+    $jq('#sailifyContainer').slideDown(200);
+    $jq('#sailifyTwitter').html('<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.julian-hirt.de/sailify" data-text="I just SAILified '+document.title.replace(' - YouTube','')+' ('+document.URL+'") data-via="julianhirt" data-hashtags="SAILify">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>');
 
     this.sailify = {
         localplayer : undefined,
@@ -52,8 +69,8 @@
         showMessage: function(message, disappear)
         {
             $jq('#sailifyMsg').html(message);
-            if(disappear != null)
-	            setTimeout(function(){$jq('#sailifyMsg').slideUp(200);},disappear);
+            //if(disappear != null)
+	        //    setTimeout(function(){$jq('#sailifyContainer').slideUp(200);},disappear);
         },
         sailReady : function (event){
             this.sailplayer = event.target;

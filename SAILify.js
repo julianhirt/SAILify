@@ -57,6 +57,8 @@
         },
         sailReady : function (event){
             this.sailplayer = event.target;
+            this.sailify.sailplayer.setPlaybackQuality('large')
+            
             if(this.sailify.localplayer != undefined)
 	        {
 	        	// Let's go!

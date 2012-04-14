@@ -3,39 +3,52 @@
 <head>
 	<title>SAILify everything!</title>
 	<link href='http://fonts.googleapis.com/css?family=Bree+Serif|Droid+Sans' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="keywords" content="Awolnation, SAIL, SAILify, SAILify everything, julian hirt">
+	<meta name="description" content="SAILify everything!">
+	<meta name="author" content="Julian Hirt" />	
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-<script>
-	$(document).ready(function() {
-		$('#sail').click(function() {
-	$.fancybox({
-			'padding'		: 0,
-			'autoScale'		: false,
-			'transitionIn'	: 'none',
-			'transitionOut'	: 'none',
-			'title'			: this.title,
-			'width'		: 680,
-			'height'		: 495,
-			'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-			'type'			: 'swf',
-			'swf'			: {
-			   	 'wmode'		: 'transparent',
-				'allowfullscreen'	: 'true'
-			}
-		});
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="SAILify everything" />
+	<meta property="og:site_name" content="SAILify everything" />
+	<meta property="og:description" content="Because it's the better soundtrack!" />
+	<meta property="og:url" content="http://julianhirt.github.com/SAILify" />
+	<meta property="og:locale" content="en_US" />
 
-	return false;
-});
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+	<script>
+		$(document).ready(function() {
+			$('#sail').click(function() {
+		$.fancybox({
+				'padding'		: 0,
+				'autoScale'		: false,
+				'transitionIn'	: 'none',
+				'transitionOut'	: 'none',
+				'title'			: this.title,
+				'width'		: 680,
+				'height'		: 495,
+				'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+				'type'			: 'swf',
+				'swf'			: {
+				   	 'wmode'		: 'transparent',
+					'allowfullscreen'	: 'true'
+				}
+			});
+
+		return false;
 	});
-</script>
+		});
+	</script>
 </head>
 
 <body>
 
 <div class='header'>
+
 <h1> SAILify everything!</h1>
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://julianhirt.github.com/SAILify" data-text="SAILify everything! Give videos a better soundtrack!" data-via="julianhirt" data-hashtags="SAILify">Tweet</a>
@@ -65,5 +78,20 @@ Every video on the web is better with <a href='http://www.youtube.com/watch?v=PP
 
 <div class='step three'><h4>Step 3</h4></div>
 </div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30890452-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
 </body>
 </html>

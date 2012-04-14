@@ -61,7 +61,7 @@
 
     $jq('#sailifyMsg').html("Your video is getting <b>SAIL</b>ified! Hold on a second...");
     $jq('#sailifyContainer').slideDown(200);
-    $jq('#sailifyTwitter').html('<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.julian-hirt.de/sailify" data-text="I just SAILified '+document.title.replace(' - YouTube','')+' ('+document.URL+'") data-via="julianhirt" data-hashtags="SAILify">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>');
+    $jq('#sailifyTwitter').html('<a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-url="http://julianhirt.github.com/SAILify" data-text="I just SAILified '+document.title.replace(' - YouTube','')+' ('+document.URL+'") data-via="julianhirt" data-hashtags="SAILify">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>');
 
     this.sailify = {
         localplayer : undefined,

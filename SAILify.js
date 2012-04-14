@@ -58,7 +58,7 @@
         sailReady : function (event){
             this.sailplayer = event.target;
             this.sailify.sailplayer.setPlaybackQuality('large')
-            
+
             if(this.sailify.localplayer != undefined)
 	        {
 	        	// Let's go!
@@ -136,10 +136,11 @@
 
 	this.sailify.initLocalplayer();
 
-    setTimeout(function(){
-      console.log("load the player api.");
-      
-	      this.sailify.sailplayer = new YT.Player('sailify', {
+    this.loader = function(){
+      	console.log("load the player api.");
+      	if(typeof YT != "undefined" && YT.Player !== undefined){
+      		console.log('seems like everything is there')
+	      	this.sailify.sailplayer = new YT.Player('sailify', {
 	          height: '1',
 	          width: '1',
 	          videoId: 'PPtSKimbjOU',
@@ -148,7 +149,9 @@
 	            'onStateChange': this.sailify.sailPlayerStateChange
 	          }
 	        });
-	  		
-	},1000);
+	  	}else{setTimeout(this.loader,100);}
+      	
+	}
+	setTimeout(this.loader,100);
 
 })();

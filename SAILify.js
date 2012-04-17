@@ -53,6 +53,13 @@
     twitter.style.margin='0 0 0 20px';
     msg.appendChild(twitter);
 
+    var close = document.createElement('div');
+    close.style.position = "fixed";
+    close.setAttribute('id','sailifyClose');
+    close.style.right = "10px";
+    close.style.top = "2px";
+    msg.appendChild(close);
+
     d.body.appendChild(msg);
 
     var tag = document.createElement('script');
@@ -62,6 +69,7 @@
     $jq('#sailifyMsg').html("Your video is getting <b>SAIL</b>ified! Hold on a second...");
     $jq('#sailifyContainer').slideDown(200);
     $jq('#sailifyTwitter').html('<a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-url="http://julianhirt.github.com/SAILify" data-text="I just SAILified '+document.title.replace(' - YouTube','')+' ('+document.URL+'") data-via="julianhirt" data-hashtags="SAILify">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>');
+    $jq('#sailifyClose').html('close').click(function(){$jq('#sailifyContainer').slideUp();});
 
     this.sailify = {
         localplayer : undefined,
@@ -91,7 +99,7 @@
             if(this.localplayer == undefined)
             {
             	// try to find other players on the page!
-            	this.showMessage("Oh no. Something went terrible wrong! Either there is no video or we can't <b>SAIL</b>ify it. Sorry.");
+            	this.showMessage("Oh no. Something went terribly wrong! Either there is no video or we can't <b>SAIL</b>ify it. Sorry.");
             	return;
             }
 
